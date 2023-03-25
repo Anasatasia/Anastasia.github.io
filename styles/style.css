@@ -24,15 +24,15 @@
 
 
 .photo_l {
-    height: 360px;
+    max-height: 360px;
 }
 
 .photo_m {
-    height: 120px;
+    max-height: 120px;
 }
 
 .photo_s{
-    height: 50px;
+    max-height: 50px;
 }
 
 .font_l{
@@ -70,6 +70,7 @@
 }
 
 .header {
+    gap: 4px;
     display: flex;
     align-content: center;
     z-index: 100;
@@ -122,17 +123,27 @@
 }
 
 .interests-list{
+    position: relative;
     width: 100%;
     background-color: white;
     padding: 20px 0;
 }
 
+.interests__background{
+    position: absolute;
+    width: 40%;
+    top: 5px;
+    right: 180px;
+}
+
 .interests-list__list{
     gap: 5px;
+    z-index: 50;
 }
 
 .interests-list__video {
     width: 80%;
+    z-index: 90;
 }
 
 .portfolio {
@@ -202,19 +213,22 @@
     .photo-list__video-mipt{
         order: 3;
     }
+    .interests__background{
+        right: 0;
+    }
 }
 
-@media(max-width: 500px) {
+@media(max-width: 720px) {
     .photo_l {
-        height: 200px;
+        max-height: 160px;
     }
 
     .photo_m {
-        height: 80px;
+        max-height: 80px;
     }
 
     .photo_s{
-        height: 40px;
+        max-height: 40px;
     }
 
     .font_l {
@@ -231,6 +245,12 @@
     .project__list-picture{
         left: 200px;
         top: 50px;
+    }
+}
+
+@media (max-width: 340px) {
+    .interests__background{
+        display: none;
     }
 }
 
