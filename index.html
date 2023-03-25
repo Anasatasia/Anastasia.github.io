@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Порфтфолио</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;600&display=swap" rel="stylesheet">
+    <meta name="description" content="портфолио Анастасия Шулепова">
+    <meta name="keywords" content="портфолио проекты навыки">
+    <meta name="author" content="Анастасия Шулепова">
+</head>
+<body class="page">
+  <header class="header flex-row">
+      <h1 class="header__link font_s link"><a href="#experience" class="link">Опыт работы</a></h1>
+      <h1 class="header__link font_s link"><a href="#skills" class="link">Навыки</a></h1>
+      <h1 class="header__link font_s link"><a href="#interests" class="link">Интересы</a></h1>
+      <h1 class="header__link font_s link"><a href="#portfolio" class="link">Портфолио</a></h1>
+      <h1 class="header__link font_s link"><a href="#contacts" class="link">Свяжитесь со мной</a></h1>
+  </header>
+  <main class="content">
+      <div class="centered-block photo-list">
+          <h2 class="font_l">привет, меня зовут Анастасия Шулепова:)</h2>
+          <b class="font_m">Я студентка первого курса МФТИ факультета ВШПИ</b>
+          <ul class="flex-row list">
+              <li class="photo-list__photo-girl">
+                  <img loading="lazy" src="./images/photo_woman.jpeg" alt="Фото Анастасии Шулеповой" class="photo_l">
+              </li>
+              <li class="photo-list__video-mipt">
+                  <video src="./videos/video_mipt.mp4" class="photo_l" autoplay muted loop></video>
+              </li>
+              <li class="photo-list__photo-family">
+                  <img loading="lazy" src="./images/photo_family.jpg" alt="Фото семьи Анастасии Шулеповой" class="photo_l">
+              </li>
+          </ul>
+      </div>
+      <div class="break-line"></div>
+      <section id="experience" class="jobs-list">
+          <div class="centered-block">
+              <h2 class="font_l">Опыт работы</h2>
+              <ul class="flex-row list">
+                  <li>
+                      <img loading="lazy" src="./logos/logo_apple.png" alt="Логотип компании Apple" class="photo_m">
+                  </li>
+                  <li>
+                      <img loading="lazy" src="./logos/logo_sber.png" alt="Логотип компании Sberbank" class="photo_m">
+                  </li>
+                  <li>
+                      <img loading="lazy" src="./logos/logo_telegram.png" alt="Логотип компании Telegram" class="photo_m">
+                  </li>
+                  <li>
+                      <img loading="lazy" src="./logos/logo_yandex.png" alt="Логотип компании Yandex" class="photo_m">
+                  </li>
+                  <li>
+                      <img loading="lazy" src="./logos/logo_google.png" alt="Логотип компании Google" class="photo_m">
+                  </li>
+              </ul>
+          </div>
+      </section>
+      <div class="break-line"></div>
+      <section id="skills" class="skills-list">
+          <div class="centered-block">
+              <h2 class="font_l">Навыки</h2>
+              <ul class="flex-row list">
+                  <li>
+                      <img loading="lazy" src="./logos/logo_cpp.png" alt="Логотип c++" class="photo_m">
+                  </li>
+                  <li>
+                      <img loading="lazy" src="./logos/logo_java.png" alt="Логотип Java" class="photo_m">
+                  </li>
+                  <li>
+                      <img loading="lazy" src="./logos/logo_js.png" alt="Логотип JavaScript" class="photo_m">
+                  </li>
+                  <li>
+                      <img loading="lazy" src="./logos/logo_python.png" alt="Логотип Python" class="photo_m">
+                  </li>
+                  <li>
+                      <img loading="lazy" src="./logos/logo_react.png" alt="Логотип React" class="photo_m">
+                  </li>
+                  <li>
+                      <img loading="lazy" src="./logos/logo_django.png" alt="Логотип django" class="photo_m">
+                  </li>
+              </ul>
+          </div>
+      </section>
+      <div class="break-line"></div>
+      <section id="interests" class="interests-list">
+          <div class="centered-block">
+              <h2 class="font_l">Интересы</h2>
+              <div class="flex-column">
+                  <ul class="flex-row list interests-list__list">
+                      <li class="font_m">Художественная литература</li>
+                      <li class="font_m">Исскусство</li>
+                      <li class="font_m">Фигурное катание</li>
+                      <li class="font_m">Иностранные языки</li>
+                  </ul>
+                  <div class="flex-row">
+                      <video src="./videos/video_fs.mp4" class="interests-list__video centered-block" muted controls></video>
+                  </div>
+            </div>
+          </div>
+      </section>
+      <div class="break-line"></div>
+      <section id="portfolio" class="portfolio">
+          <div class="centered-block project">
+              <h2 class="font_l">Мои проекты</h2>
+              <div class="flex-row project__list">
+                  <ul class="flex-column list">
+                      <li class="font_m project__list-points">
+                          <a class="link">Reactive</a>
+                          <img loading="lazy" src="./images/project_reactive.gif" class="project__list-picture" alt="project_reactive">
+                      </li>
+                      <li class="font_m project__list-points">
+                          <a class="link">Slider</a>
+                          <img loading="lazy" src="./images/project_slider.gif" class="project__list-picture" alt="project_slider">
+                      </li>
+                      <li class="font_m project__list-points">
+                          <a class="link">Design</a>
+                          <div>
+                              <img loading="lazy" src="./images/project_design.png" class="project__list-picture" alt="project_design">
+                          </div>
+                      </li>
+                      <li class="font_m project__list-points">
+                          <a class="link">How to study</a>
+                          <img loading="lazy" src="./images/project_how-to-study.png" class="project__list-picture" alt="project_how-to-study">
+                      </li>
+                      <li class="font_m project__list-points">
+                          <a class="link">Mesto</a>
+                          <img loading="lazy" src="./images/project_mesto.png" class="project__list-picture" alt="project_mesto">
+                      </li>
+                      <li class="font_m project__list-points">
+                          <a class="link">Across Russia</a>
+                          <img loading="lazy" src="./images/project_across-russia.png" class="project__list-picture" alt="project_across-russia">
+                      </li>
+                      <li class="font_m project__list-points">
+                          <a class="link">Album</a>
+                          <img loading="lazy" src="./images/project_album.png" class="project__list-picture" alt="project_album">
+                      </li>
+                  </ul>
+                  <div>
+                      <img src="./images/photo-kot.png" class="photo_l project__list-background" alt="котик">
+                  </div>
+              </div>
+          </div>
+      </section>
+  </main>
+  <footer class="footer" id="contacts">
+      <div class="flex-column">
+          <ul class="list flex-row footer__logo">
+              <li class="footer__logo-points">
+                  <a href="https://www.facebook.com/profile.php?id=100028427662826&mibextid=LQQJ4d" target="_blank">
+                      <img loading="lazy" src="./icons/icon_facebook.png" alt="фейсбук" class="photo_s">
+                  </a>
+              </li>
+              <li class="footer__logo-points">
+                  <a href="https://vk.com/away.php?to=https%3A%2F%2Finstagram.com%2Fshulepusik%3Figshid%3DYmMyMTA2M2Y%3D&cc_key=" target="_blank">
+                      <img loading="lazy" src="./icons/icon_inst.png" class="photo_s" alt="инстаграм">
+                  </a>
+              </li>
+              <li class="footer__logo-points">
+                  <a href="https://t.me/shulepusik" target="_blank">
+                      <img loading="lazy" src="./icons/icon_tg.png" class="photo_s" alt="телеграм">
+                  </a>
+              </li>
+              <li class="footer__logo-points">
+                  <a href="mailto:shulepova.aa@phystech.edu" target="_blank">
+                      <img loading="lazy" src="./icons/icon_mail.png" class="photo_s" alt="почта">
+                  </a>
+              </li>
+              <li class="footer__logo-points">
+                  <a href="https://vk.com/shulepusik" target="_blank">
+                      <img loading="lazy" src="./icons/icon_vk.png" class="photo_s" alt="вконтакте">
+                  </a>
+              </li>
+          </ul>
+          <b class="font_s footer__tel">tel: +79121234567</b>
+      </div>
+  </footer>
+</body>
+</html>
