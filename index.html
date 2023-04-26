@@ -11,6 +11,16 @@
     <meta itemprop="image" content="./images/photo_woman.webp">
 </head>
 <body class="page">
+  <div class="popup">
+      <div class="popup__container">
+          <a class="popup__link popup__link_left link" href="#">
+          </a>
+          <div class="popup__image">
+          </div>
+          <a class="popup__link popup__link_right link" href="#">
+          </a>
+      </div>
+  </div>
   <header class="header">
       <nav class="menu">
           <ul class="menu__list flex-row">
@@ -38,13 +48,19 @@
           <b class="font_size_m font general__subtitle">Я студентка первого курса МФТИ факультета ВШПИ</b>
           <ul class="flex-row photo-list">
               <li class="photo-list__photo-girl">
-                  <img src="./images/photo_woman.webp" alt="Фото Анастасии Шулеповой" class="photo_height_l">
+                  <a href="./images/photo_woman.webp" class="link link_popup">
+                      <img src="./images/photo_woman.webp" alt="Фото Анастасии Шулеповой" class="photo_height_l">
+                  </a>
               </li>
               <li class="photo-list__video-mipt">
-                  <video src="./videos/video_mipt.mp4" class="photo_height_l" autoplay muted loop></video>
+                  <a href="./videos/video_mipt.mp4" class="link link_popup video">
+                      <video src="./videos/video_mipt.mp4" class="photo_height_l video" autoplay muted loop></video>
+                  </a>
               </li>
               <li class="photo-list__photo-family">
-                  <img src="./images/photo_family.webp" alt="Фото семьи Анастасии Шулеповой" class="photo_height_l">
+                  <a href="./images/photo_family.webp" class="link link_popup">
+                      <img src="./images/photo_family.webp" alt="Фото семьи Анастасии Шулеповой" class="photo_height_l">
+                  </a>
               </li>
           </ul>
       </div>
@@ -54,19 +70,29 @@
               <h2 class="font_size_l font jobs__title">Опыт работы</h2>
               <ul class="flex-row jobs-list">
                   <li class="jobs-list__points">
-                      <img src="./logos/logo-apple.webp" alt="Логотип компании Apple" class="photo_height_m">
+                      <a class="link link_popup" href="./logos/logo-apple.webp">
+                          <img src="./logos/logo-apple.webp" alt="Логотип компании Apple" class="photo_height_m">
+                      </a>
                   </li>
                   <li class="jobs-list__points">
-                      <img src="./logos/logo-sber.webp" alt="Логотип компании Sberbank" class="photo_height_m">
+                      <a class="link link_popup" href="./logos/logo-sber.webp">
+                          <img src="./logos/logo-sber.webp" alt="Логотип компании Sberbank" class="photo_height_m">
+                      </a>
                   </li>
                   <li class="jobs-list__points">
-                      <img src="./logos/logo-telegram.webp" alt="Логотип компании Telegram" class="photo_height_m">
+                      <a class="link link_popup" href="./logos/logo-telegram.webp">
+                          <img src="./logos/logo-telegram.webp" alt="Логотип компании Telegram" class="photo_height_m">
+                      </a>
                   </li>
                   <li class="jobs-list__points">
-                      <img src="./logos/logo-yandex.webp" alt="Логотип компании Yandex" class="photo_height_m">
+                      <a class="link link_popup" href="./logos/logo-yandex.webp">
+                          <img src="./logos/logo-yandex.webp" alt="Логотип компании Yandex" class="photo_height_m">
+                      </a>
                   </li>
                   <li class="jobs-list__points">
-                      <img src="./logos/logo-google.webp" alt="Логотип компании Google" class="photo_height_m">
+                      <a class="link link_popup" href="./logos/logo-google.webp">
+                          <img src="./logos/logo-google.webp" alt="Логотип компании Google" class="photo_height_m">
+                      </a>
                   </li>
               </ul>
           </div>
@@ -189,7 +215,35 @@
           <a href="tel:+79121234567" class="link footer__link">
               <b class="font_size_s">+79121234567</b>
           </a>
+          <button class="footer__button font_size_m">Форма обратной связи</button>
       </div>
   </footer>
+  <div class="time-popup">
+      <div class="time-popup__container">
+          <p class="time-popup__text">Привет❤️</p>
+          <button class="time-popup__close-button"></button>
+      </div>
+  </div>
+  <div class="form-popup">
+      <div class="form-popup__container">
+          <form class="form-popup__form">
+              <h2 class="form-popup__heading">Обратная форма связи</h2>
+              <label for="tel" class="form-popup__text">Телефон</label>
+              <input type="tel" id="tel" required class="form-popup__input" placeholder="89041234567">
+              <span class="tel-error"></span>
+              <label for="email" class="form-popup__text">Email</label>
+              <input type="email" id="email" required class="form-popup__input" placeholder="kot@gmail.com">
+              <span class="email-error"></span>
+              <label for="text" class="form-popup__text">Текст</label>
+              <input type="text" id="text" required class="form-popup__input" placeholder="Привет">
+              <span class="text-error"></span>
+              <button class="form-popup__button" type="submit">
+                  Сохранить
+              </button>
+              <button class="form-popup__close-button" type="button"></button>
+          </form>
+      </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
