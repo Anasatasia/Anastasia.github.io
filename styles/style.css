@@ -22,6 +22,11 @@
     gap: 40px;
 }
 
+.page_dark-theme {
+    color: white;
+    background-color: black;
+}
+
 
 .centered-block{
     margin-left: 10%;
@@ -31,6 +36,10 @@
 .link {
     text-decoration: none;
     color: black;
+}
+
+.link_theme-dark {
+    color: white;
 }
 
 .photo_height_l {
@@ -86,11 +95,17 @@
     z-index: 100;
     position: sticky;
     height: 45px;
-    background-color: white;
     border-bottom: 2px solid #F7B267;
     box-shadow: 0 10px 20px #F7B267;
     width: 100%;
     top: 0;
+    background-color: white;
+}
+
+.header_theme-dark {
+    background-color: black;
+    border-bottom: 2px solid #9FC2CC;
+    box-shadow: 0 10px 20px #9FC2CC;
 }
 
 .menu{
@@ -134,9 +149,12 @@
     z-index: 10;
 }
 
+.break-line_theme-dark {
+    box-shadow: 0 0 5px 2px #274C68;
+}
+
 .jobs{
     width: 100%;
-    background-color: white;
     padding: 20px 0;
 }
 
@@ -148,7 +166,6 @@
 .skills{
     width: 100%;
     padding: 20px 0;
-    background-color: white;
 }
 
 .skills-list{
@@ -159,7 +176,6 @@
 .interests{
     position: relative;
     width: 100%;
-    background-color: white;
     padding: 20px 0;
 }
 
@@ -232,6 +248,10 @@
     padding: 20px;
 }
 
+.footer_theme-dark {
+    background-color: #274C68;
+}
+
 .footer__link{
     margin: auto;
 }
@@ -246,13 +266,25 @@
     padding: 0 10px 0;
 }
 
-.footer__button {
+.footer__button-contact {
     padding: 10px 0 0;
     border: none;
     outline: none;
     background-color: transparent;
     cursor: pointer;
     text-decoration: none;
+    display: block;
+    margin: auto;
+}
+
+.footer__button-theme {
+    padding: 10px 0 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    margin: auto;
 }
 
 
@@ -393,9 +425,11 @@
     font-size: 25px;
     padding: 0 0 12px 0;
     font-weight: 600;
+    color: black;
 }
 
 .form-popup__text {
+    color: black;
     padding: 0;
     margin: 0;
     font-size: 20px;

@@ -200,11 +200,60 @@ formClosePopupButton.addEventListener('click', function (evt) {
     setTimeout(changeZIndex, 500);
 })
 
-let formButton = document.querySelector(".footer__button");
+let formButtonContact = document.querySelector(".footer__button-contact");
 
-formButton.addEventListener('click', function (evt) {
+formButtonContact.addEventListener('click', function (evt) {
     evt.preventDefault();
     let formPopup = document.querySelector(".form-popup");
     formPopup.setAttribute("style", "z-index: 1000");
     changeClass();
+})
+
+let formButtonTheme = document.querySelector(".footer__button-theme");
+
+formButtonTheme.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    let page = document.querySelector(".page");
+    page.classList.toggle("page_dark-theme");
+    let header = document.querySelector(".header");
+    header.classList.toggle("header_theme-dark");
+    let links = document.querySelectorAll(".link");
+    links.forEach((link) => {
+        link.classList.toggle("link_theme-dark");
+    })
+    let footer = document.querySelector(".footer");
+    footer.classList.toggle("footer_theme-dark");
+    let lines = document.querySelectorAll(".break-line");
+    lines.forEach((line) => {
+        line.classList.toggle("break-line_theme-dark");
+    })
+    let photo1 = document.querySelector(".project-list__background");
+    if (!photo1.classList.contains("project-list__background_theme-dark")) {
+        photo1.setAttribute("src", "./images/kot(2).png");
+        photo1.classList.add("project-list__background_theme-dark");
+    }
+    else {
+        photo1.setAttribute("src", "./images/photo-kot.webp");
+        photo1.classList.remove("project-list__background_theme-dark");
+    }
+    let photo2 = document.querySelector(".interests-list__background");
+    if (!photo2.classList.contains("interests-list__background_theme-dark")) {
+        photo2.setAttribute("src", "./images/kot(1).png");
+        photo2.classList.add("interests-list__background_theme-dark");
+    }
+    else {
+        photo2.setAttribute("src", "./images/photo_kitten.webp");
+        photo2.classList.remove("interests-list__background_theme-dark");
+    }
+    let link = evt.target;
+    if (link.textContent === "Темная тема") {
+        link.textContent = "Светлая тема";
+    }
+    else {
+        link.textContent = "Темная тема";
+    }
+    let h1 = document.getElementsByTagName("h1");
+    let h2s = document.getElementsByTagName("h2");
+    if (page.classList.contains("page_dark-theme")) {
+    }
 })
