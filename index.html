@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Портфолио</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
     <meta name="description" content="портфолио Анастасия Шулепова">
     <meta name="keywords" content="портфолио проекты навыки">
@@ -225,9 +226,15 @@
           <button class="time-popup__close-button"></button>
       </div>
   </div>
+  <div class="validation-popup">
+      <div class="validation-popup__container">
+          <p class="validation-popup__text">Успешно отправлено👍</p>
+          <button class="validation-popup__close-button"></button>
+      </div>
+  </div>
   <div class="form-popup">
       <div class="form-popup__container">
-          <form class="form-popup__form">
+          <form action="" class="form-popup__form">
               <h2 class="form-popup__heading">Обратная форма связи</h2>
               <label for="tel" class="form-popup__text">Телефон</label>
               <input type="tel" id="tel" required class="form-popup__input" placeholder="89041234567">
@@ -239,7 +246,7 @@
               <input type="text" id="text" required class="form-popup__input" placeholder="Привет">
               <span class="text-error"></span>
               <button class="form-popup__button" type="submit">
-                  Сохранить
+                  Отправить
               </button>
               <button class="form-popup__close-button" type="button"></button>
           </form>

@@ -44,7 +44,7 @@ const isValid = function (form, input) {
     }
 }
 
-const showInputError = function (form, input, message) {
+const showInputError = function (form, input) {
     input.classList.add('error');
     const span = document.querySelector(`.${input.id}-error`);
     span.textContent = "ошибка";
@@ -58,6 +58,52 @@ const hideInputError = function (form, input) {
 }
 
 setValidation();
+
+let popupForm = document.querySelector(".form-popup__form");
+
+popupForm.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+    console.log("submit");
+    let button = document.querySelector(".form-popup__button");
+    button.textContent = "Отправка";
+    let {tel, email, text} = evt.currentTarget.elements;
+    createPost({
+        tel: tel.value,
+        email: email.value,
+        text: text.value
+    })
+})
+
+const createPost = function (post) {
+    console.log("Отправка");
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'charset=UTF-8'
+        },
+        body: JSON.stringify({
+            tel: post.tel,
+            email: post.email,
+            text: post.text
+        })
+    })
+    .then(successfulValid)
+}
+
+const successfulValid = function () {
+    let validationPopup = document.querySelector(".validation-popup");
+    validationPopup.classList.add("validation-popup_open");
+    let formPopup = document.querySelector(".form-popup_open");
+    formPopup.classList.remove("form-popup_open");
+}
+
+let validationPopupCloseButton = document.querySelector(".validation-popup__close-button");
+
+validationPopupCloseButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    let validationPopup = document.querySelector(".validation-popup_open");
+    validationPopup.classList.remove("validation-popup_open");
+})
 
 const checkLinks = function (img) {
     let imgParent = img.parentElement;
@@ -141,9 +187,11 @@ popupLeftLink.addEventListener('click', function(evt) {
 let oPopup = document.querySelector(".popup");
 let oFormPopup = document.querySelector(".form-popup");
 let oTimePopup = document.querySelector(".time-popup");
+let oValidationPopup = document.querySelector(".validation-popup");
 
 document.addEventListener('click', function(evt){
     if(evt.target === oPopup && oPopup.classList.contains("popup_open")){
+        console.log(1);
         let img = document.querySelector(".active");
         img.classList.remove("active");
         oPopup.classList.remove("popup_open");
@@ -162,8 +210,10 @@ document.addEventListener('click', function(evt){
         let popupHello = document.querySelector(".time-popup_open");
         popupHello.classList.remove("time-popup_open");
     }
+    if (evt.target === oValidationPopup && oValidationPopup.classList.contains("validation-popup_open")) {
+        oValidationPopup.classList.remove("validation-popup_open");
+    }
 });
-
 const sayHello = function() {
     let popupHello = document.querySelector(".time-popup");
     popupHello.classList.add("time-popup_open");
@@ -252,8 +302,5 @@ formButtonTheme.addEventListener('click', function (evt) {
     else {
         link.textContent = "Темная тема";
     }
-    let h1 = document.getElementsByTagName("h1");
-    let h2s = document.getElementsByTagName("h2");
-    if (page.classList.contains("page_dark-theme")) {
-    }
 })
+
