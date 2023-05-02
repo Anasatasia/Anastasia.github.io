@@ -305,3 +305,27 @@ formButtonTheme.addEventListener('click', function (evt) {
     }
 })
 
+let rainButton = document.querySelector(".footer__button-rain");
+
+rainButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    console.log(window.innerWidth);
+    if (window.innerWidth >= 800) {
+        console.log(11);
+        let rain = document.querySelector(".rain");
+        rain.classList.add("rain_open");
+    }
+})
+
+let rain = document.querySelector(".rain");
+
+window.addEventListener('resize', function () {
+    if (rain.classList.contains("rain_open")) {
+        rain.classList.toggle("rain_animation");
+    }
+})
+rain.addEventListener('click', function () {
+    if (rain.classList.contains("rain_open")) {
+        rain.classList.remove("rain_open");
+    }
+})

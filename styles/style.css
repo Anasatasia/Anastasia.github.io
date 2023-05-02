@@ -286,6 +286,14 @@
     margin: auto;
 }
 
+.footer__button-rain {
+    padding: 10px 0 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin: auto;
+}
 
 .popup {
     display: flex;
@@ -611,4 +619,33 @@ span {
 .disabled {
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+.rain {
+    display: none;
+    position: fixed;
+    z-index: 10003;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/rain.png);
+}
+
+.rain_open {
+    display: block;
+}
+
+.rain_animation {
+    animation: rain 1.5s linear infinite;
+}
+
+@keyframes rain {
+    from {
+        background-position: -10% -10%;
+    }
+    to {
+        background-position: -20% 100%;
+    }
+}
+
 
