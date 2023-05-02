@@ -314,6 +314,7 @@ rainButton.addEventListener('click', function (evt) {
         console.log(11);
         let rain = document.querySelector(".rain");
         rain.classList.add("rain_open");
+        rain.classList.add("rain_animation");
     }
 })
 
