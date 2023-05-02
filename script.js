@@ -95,6 +95,7 @@ const successfulValid = function () {
     validationPopup.classList.add("validation-popup_open");
     let formPopup = document.querySelector(".form-popup_open");
     formPopup.classList.remove("form-popup_open");
+    formPopup.setAttribute("style", "z-index: -1000");
 }
 
 let validationPopupCloseButton = document.querySelector(".validation-popup__close-button");
