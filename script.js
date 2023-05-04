@@ -91,6 +91,8 @@ const createPost = function (post) {
 }
 
 const successfulValid = function () {
+    let button = document.querySelector(".form-popup__button");
+    button.textContent = "Отправить";
     let validationPopup = document.querySelector(".validation-popup");
     validationPopup.classList.add("validation-popup_open");
     let formPopup = document.querySelector(".form-popup_open");
