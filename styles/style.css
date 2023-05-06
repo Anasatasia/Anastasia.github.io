@@ -641,6 +641,16 @@ span {
     animation: rain 1.5s linear infinite;
 }
 
+@media (max-width: 800px) {
+    .rain_open {
+        display: none;
+    }
+
+    .footer__button-rain {
+        display: none;
+    }
+}
+
 @keyframes rain {
     from {
         background-position: -10% -10%;
