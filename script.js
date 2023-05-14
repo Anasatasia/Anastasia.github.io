@@ -33,6 +33,9 @@ const setEventListeners = function (form) {
 
 const checkEmail = function (input) {
     const inputValue = input.value.split(".");
+    if (inputValue.length <= 1) {
+        return true;
+    }
     const emailEnd = inputValue.pop();
     return emailEnd.length < 2 || emailEnd.length > 6 || !(/[a-z]/i.test(emailEnd));
 }
