@@ -493,6 +493,7 @@
 }
 
 .form-popup__input {
+    outline:none;
     margin-bottom: 20px;
     padding: 2px;
     border: 0;
@@ -614,7 +615,7 @@ span {
 
 .show {
     display: block;
-    margin-top: -25px;
+    margin-top: -23px;
     color: red;
 }
 
