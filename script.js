@@ -21,36 +21,20 @@ const setEventListeners = function (form) {
     const button = form.querySelector('.form-popup__button');
     disabledButton(inputs, button);
     inputs.forEach((input) => {
-        isValid(form, input);
+        isValid(form, input, inputs, button);
     })
     inputs.forEach((input) => {
         input.addEventListener('input', function () {
-            disabledButton(inputs, button);
-            isValid(form, input);
+            isValid(form, input, inputs, button);
         })
     })
 }
 
-const disabledButton = function (inputs, button) {
-    let fl = 1;
-    inputs.forEach((input) => {
-        if (!input.validity.valid) {
-            fl = 0;
-            button.setAttribute('disabled', 'disabled');
-            button.classList.add('disabled');
-            return 0;
-        }
-    })
-    if (fl === 1) {
-        button.removeAttribute('disabled');
-        button.classList.remove('disabled');
-    }
-}
 
 const checkEmail = function (input) {
     const inputValue = input.value.split(".");
     const emailEnd = inputValue.pop();
-    return emailEnd.length < 2 || emailEnd.length > 6;
+    return emailEnd.length < 2 || emailEnd.length > 6 || !(/[a-z]/i.test(emailEnd));
 }
 
 const checkText = function (input) {
@@ -63,13 +47,15 @@ const checkTel = function (input) {
     return Number.isNaN(Number(telEnd)) || telEnd.length !== 11 || (inputValue.length === 1 && inputValue[0] !== "") || inputValue.length > 1;
 }
 
-const isValid = function (form, input) {
+const isValid = function (form, input, inputs, button) {
     if (input.id) {
         if (!input.validity.valid || (input.type === "email" && checkEmail(input)) || (input.type === "tel" && checkTel(input)) || (input.type === "text" && !checkText(input))) {
             showInputError(form, input, input.validationMessage);
+            disabledButton(inputs, button);
         }
         else {
             hideInputError(form, input);
+            disabledButton(inputs, button);
         }
     }
 }
@@ -85,6 +71,22 @@ const hideInputError = function (form, input) {
     input.classList.remove('error');
     const span = document.querySelector(`.${input.id}-error`);
     span.classList.remove('show');
+}
+
+const disabledButton = function (inputs, button) {
+    let fl = 1;
+    inputs.forEach((input) => {
+        if (input.classList.contains("error")) {
+            fl = 0;
+            button.setAttribute('disabled', 'disabled');
+            button.classList.add('disabled');
+            return 0;
+        }
+    })
+    if (fl === 1) {
+        button.removeAttribute('disabled');
+        button.classList.remove('disabled');
+    }
 }
 
 setValidation();
@@ -230,7 +232,6 @@ leftSwipe();
 const closePopupOverlay = function () {
     document.addEventListener('click', function(evt){
         if(evt.target === oPopup && oPopup.classList.contains("popup_open")){
-            console.log(1);
             const img = document.querySelector(".active");
             img.classList.remove("active");
             oPopup.classList.remove("popup_open");
@@ -368,7 +369,6 @@ const rainButton = document.querySelector(".footer__button-rain");
 const rainOpen = function () {
     rainButton.addEventListener('click', function (evt) {
         evt.preventDefault();
-        console.log(window.innerWidth);
         if (window.innerWidth >= 800) {
             const rain = document.querySelector(".rain");
             rain.classList.add("rain_open");
